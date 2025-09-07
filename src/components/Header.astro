@@ -1,5 +1,66 @@
 ---
+import { string } from "astro:schema"
+import Logo from "../assets/icons/logo.svg"
+import Menu from "../assets/icons/menu.svg"
+import Close from "../assets/icons/exit.svg"
 
+interface NavLinks {
+  name: string;
+  href: string;
+};
+
+const navlinks: NavLinks[] = [
+  {name: "About", href: "#aboutUs"},
+  {name: "Services", href: "#ourServices"},
+  {name: "Our Work", href:"#recentWorks"}
+];
 ---
 
-<h1>Header</h1>
+<header>
+  <div class="flex flex-col items-center">
+    <div class=" w-[350px]  flex justify-between items-center">
+      <Logo/>
+      <Menu id="open-menu" class=" cursor-pointer text-neutral-black-900"/>
+      <nav id="menu-modal" class=" absolute bg-amber-900 inset-0 hidden">
+        <Close id="close-menu" class=" ms-auto cursor-pointer mt-4 mr-4"/>
+        <ul class="flex flex-col gap-5 items-center">
+          {
+            navlinks.map((link: NavLinks) => (
+              <li>
+                <a class="hover:text-amber-300 transition-all duration-100" href={link.href}>{link.name}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+    </div>
+    <div class="w-[350px]">
+      <h1>Make your home an ode to joy</h1>
+      <p>
+        We turn your empty house to a lovely home, making the compact spaces  with sapce saving furnitures. Making the unique tastes of yours into reality! 
+      </p>
+      
+    </div>
+  </div>
+</header>
+
+<script>
+  const btnClose = document.getElementById("close-menu");
+  const menuModal = document.getElementById("menu-modal");
+  const btnOpen = document.getElementById("open-menu");
+  const links = document.querySelectorAll("a");
+
+  btnClose?.addEventListener('click', ()=> {
+    menuModal?.classList.add("hidden")
+  })
+
+  btnOpen?.addEventListener('click', ()=> {
+    menuModal?.classList.remove("hidden")
+  })
+
+  links.forEach(link => {
+    link.addEventListener('click', ()=> {
+      menuModal?.classList.add("hidden")
+    })
+  })
+</script>
