@@ -1,0 +1,43 @@
+---
+import Image from "astro/components/Image.astro";
+import GermanAward from "../assets/images/germanAward.svg"
+import GoldenAward from "../assets/images/goldenAward.svg"
+import GoodAward from "../assets/images/goodAward.svg"
+import IfAward from "../assets/images/ifAward.svg"
+
+interface SectionAward {
+  title: string;
+  year: string;
+  img: ImageMetadata;
+};
+
+const awards: SectionAward[] = [
+  { title: "German Design Award", year: "2021", img: GermanAward },
+  { title: "Gold A’ Design Award", year: "2021", img: GoldenAward},
+  { title: "IF Design Award", year: "2020", img: IfAward},
+  { title: "Good Design Award", year: "2019", img: GoodAward},
+];
+---
+
+<div class="max-w-7xl bg-neutral-black-900 text-neutral-grey-300 grid justify-center content-center">
+  <div class="w-[340px] grid grid-cols-[80px_1fr] h-auto py-6">
+    <div class="flex items-start">
+      <h2 class=" font-secondary text-2xl italic -rotate-90 mt-6 -ml-7 tracking-wide">Awards</h2>
+      <div class="w-[1px] bg-white h-7 rotate-90 mt-7"></div>
+    </div>
+    <div>
+      {
+        awards.map((award: SectionAward) => (
+          <section class="flex items-center gap-4 mb-6 last:mb-0">
+            <Image src={award.img} alt={award.title} />
+            <div class="text-sm font-normal flex flex-col gap-1.5">
+              <h3 class="">{award.title}</h3>
+              <span>{award.year}</span>
+            </div>
+          </section>
+        ))
+      }
+    </div>
+  </div>
+</div>
+
