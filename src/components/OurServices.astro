@@ -1,0 +1,43 @@
+---
+import Section from "../components/Section.astro";
+import Image from "astro/components/Image.astro";
+import Building from "../assets/icons/buildingRenovation.svg"
+import Interior from "../assets/icons/interiorDesign.svg"
+import Management from "../assets/icons/management.svg"
+
+interface Services {
+  title: string;
+  icon: ImageMetadata;
+};
+
+const description = "Non diam pretium tristique augue placerat dolor. Accumsan nibh nunc, molestie volutpat ipsum, ultricies."
+
+const sectionServices: Services[] = [
+  { 
+    title: "Architectural & Interior design",  
+    icon: Interior
+  },
+
+  {
+    title: "Building Renovation",  
+    icon: Building
+  },
+
+  {
+    title: "Construciton Management",
+    icon: Management
+  }
+]
+---
+
+<Section sectionTitle="OUR SERVICES" class="my-12" sectionSubtitle="We provide the best solutions for your dream home">
+  {
+    sectionServices.map((service: Services) => (
+      <section class="border-2 border-neutral-grey-300 mb-8 p-6 first:mt-10">
+        <Image class=" w-12 h-12" src={service.icon} alt={service.title} />
+        <h4 class=" text-3xl leading-10 font-secondary my-4 font-normal">{service.title}</h4>
+        <p class="text-lg leading-8 font-light">{description}</p>
+      </section>
+    ))
+  }
+</Section>

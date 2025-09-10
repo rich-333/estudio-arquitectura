@@ -1,26 +1,20 @@
 ---
+import Section from "../components/Section.astro"
 import AboutAward from "../assets/images/aboutAward.svg"
 import AboutImage1 from "../assets/images/aboutImage1.svg"
 import AboutImage2 from "../assets/images/aboutImage2.svg"
 ---
 
-<section class=" grid content-center justify-center text-neutral-black-700">
-  <div class="w-[350px] my-12">
-    <div class="flex items-center gap-4">
-      <div class="w-18 h-0.5 bg-primary-brown-600"></div>
-      <h2 class=" text-primary-brown-600 font-semibold text-sm tracking-widest">ABOUT US</h2>
-    </div>
-    <h3 class=" font-secondary text-4xl leading-12 my-6 text-neutral-black-900">We help to bring your dream home to reality</h3>
-    <p class=" leading-6 font-light">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus fringilla dui amet faucibus nam. Erat id laoreet posuere etiam morbi.
-    </p>
-    <p class="mt-6 mb-20 leading-6 font-light">
-      Tempor dolor elementum tellus non ipsum faucibus. Justo, magna mauris posuere auctor justo. Habitant proin aliquet volutpat leo ultricies. Dui blandit eget vitae turpis ultrices aliquet nunc. Faucibus sit odio bibendum lobortis diam.
-    </p>
-    <div class="flex relative gap-2 justify-center">
-      <AboutImage1/>
-      <AboutAward class="absolute right-20 bottom-62"/>
-      <AboutImage2 class=" mt-10"/>
-    </div>
+<Section sectionTitle="ABOUT US" class=" my-12" sectionSubtitle="We help to bring your dream home to reality">
+  <p class=" leading-6 font-light">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus fringilla dui amet faucibus nam. Erat id laoreet posuere etiam morbi.
+  </p>
+  <p class="mt-6 mb-20 leading-6 font-light">
+    Tempor dolor elementum tellus non ipsum faucibus. Justo, magna mauris posuere auctor justo. Habitant proin aliquet volutpat leo ultricies. Dui blandit eget vitae turpis ultrices aliquet nunc. Faucibus sit odio bibendum lobortis diam.
+  </p>
+  <div class="flex relative gap-2 justify-center">
+    <AboutImage1/>
+    <AboutAward class="absolute right-20 bottom-62"/>
+    <AboutImage2 class=" mt-10"/>
   </div>
-</section>
+</Section>
