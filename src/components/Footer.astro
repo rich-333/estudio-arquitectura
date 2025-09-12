@@ -1,5 +1,55 @@
 ---
+import facebook from "../assets/icons/facebook.svg"
+import instagram from "../assets/icons/instagram.svg"
+import youtube from "../assets/icons/youtube.svg"
+import twitter from "../assets/icons/twitter.svg"
+import Image from "astro/components/Image.astro"
 
+interface Icons {
+  img: ImageMetadata;
+}
+
+const footerIcons: Icons[] = [
+  {
+    img: instagram
+  },
+  {
+    img: facebook
+  },
+  {
+    img: youtube
+  },
+  {
+    img: twitter
+  }
+]
 ---
 
-<h1>Footer</h1>
+<footer>
+  <div></div>
+  <div>
+    <h2>Kick-start your dream home with us</h2>
+    <a href="">Send us a hi</a>
+    <h3>Brooklyn, New York</h3>
+    <span>962 Fifth Avenue Str, 3rd Floor-Trump Building NY 10006, United State.</span>
+    <span>Email us at</span>
+    <span>hello@landify.design</span>
+    <span>If you're hurry, quick call for us</span>
+    <span>+8(663)125-08-59</span>
+  </div>
+  <div></div>
+  <div>
+    <span>© 2022 Inteo - Award winning studio. Made with love by Landify</span>
+    <div>
+      <h4>CONNECT</h4>
+      <div></div>
+    </div>
+    {
+      footerIcons.map((icon: Icons) => (
+        <div>
+          <Image src={icon.img} alt="Facebook"/>
+        </div>
+      ))
+    }
+  </div>
+</footer>
