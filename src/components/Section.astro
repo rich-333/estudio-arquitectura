@@ -1,15 +1,16 @@
 ---
 interface Props {
+  id?: string;
   sectionTitle: string;
   sectionSubtitle: string;
   class?: string;
   classMB?: string
 }
 
-const { sectionTitle, class: extraClass = "", classMB = "", sectionSubtitle } = Astro.props;
+const { id, sectionTitle, class: extraClass = "", classMB = "", sectionSubtitle } = Astro.props;
 ---
 
-<div class={`flex items-center justify-center flex-col ${classMB} text-neutral-black-700`}>
+<div id={id} class={`flex items-center justify-center flex-col ${classMB} text-neutral-black-700`}>
   <section class={`w-[350px] ${extraClass}`}>
     <div class="flex items-center gap-4">
       <div class=" w-18 h-0.5 bg-primary-brown-600"></div>

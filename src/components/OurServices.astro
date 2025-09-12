@@ -6,10 +6,12 @@ import Interior from "../assets/icons/interiorDesign.svg"
 import Management from "../assets/icons/management.svg"
 
 interface Services {
+  id?: string;
   title: string;
   icon: ImageMetadata;
 };
 
+const { id } = Astro.props;
 const description = "Non diam pretium tristique augue placerat dolor. Accumsan nibh nunc, molestie volutpat ipsum, ultricies."
 
 const sectionServices: Services[] = [
@@ -30,7 +32,7 @@ const sectionServices: Services[] = [
 ]
 ---
 
-<Section sectionTitle="OUR SERVICES" class="my-12" sectionSubtitle="We provide the best solutions for your dream home" classMB="mb-10">
+<Section id={id} sectionTitle="OUR SERVICES" class="my-12" sectionSubtitle="We provide the best solutions for your dream home" classMB="mb-10">
   {
     sectionServices.map((service: Services) => (
       <section class="border-2 border-neutral-grey-300 mb-8 p-6 first:mt-10">
