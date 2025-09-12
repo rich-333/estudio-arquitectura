@@ -7,49 +7,93 @@ import Image from "astro/components/Image.astro"
 
 interface Icons {
   img: ImageMetadata;
+  label: string;
+  href: string;
+}
+
+interface Contacts {
+  contact: string;
+  address: string
 }
 
 const footerIcons: Icons[] = [
   {
-    img: instagram
+    img: instagram,
+    label: "Instagram",
+    href: "#"
   },
   {
-    img: facebook
+    img: facebook,
+    label: "Facebook",
+    href: "#"
   },
   {
-    img: youtube
+    img: youtube,
+    label: "Youtube",
+    href: "#"
   },
   {
-    img: twitter
+    img: twitter,
+    label: "twitter",
+    href: "#"
+  }
+]
+
+const footerContacts: Contacts[] = [
+  {
+    contact: "Email us at",
+    address: "hello@landify.design"
+  },
+  {
+    contact: "If you're hurry, quick call for us",
+    address: "+8(663)125-08-59"
   }
 ]
 ---
 
-<footer>
-  <div></div>
-  <div>
-    <h2>Kick-start your dream home with us</h2>
-    <a href="">Send us a hi</a>
-    <h3>Brooklyn, New York</h3>
-    <span>962 Fifth Avenue Str, 3rd Floor-Trump Building NY 10006, United State.</span>
-    <span>Email us at</span>
-    <span>hello@landify.design</span>
-    <span>If you're hurry, quick call for us</span>
-    <span>+8(663)125-08-59</span>
-  </div>
-  <div></div>
-  <div>
-    <span>© 2022 Inteo - Award winning studio. Made with love by Landify</span>
-    <div>
-      <h4>CONNECT</h4>
-      <div></div>
+<footer class="flex justify-center">
+  <div class="w-[350px]">
+    <div class="bg-neutral-grey-300 w-full h-0.5 mb-10"></div>
+    <div class="flex flex-col gap-12">
+      <div class="flex flex-col gap-2">
+        <h4 class="font-secondary text-3xl font-normal leading-10">Kick-start your dream home with us</h4>
+        <a class="font-secondary italic text-3xl text-primary-brown-600 underline" href="#">Send us a hi</a>
+      </div>
+      <div class="flex flex-col gap-8">
+        <address class="flex flex-col gap-2 not-italic">
+          <h5 class="font-secondary font-normal text-2xl">Brooklyn, New York</h5>
+          <span class="font-light leading-6 text-sm">962 Fifth Avenue Str, 3rd Floor-Trump Building NY 10006, United State.</span>
+        </address>
+        {
+          footerContacts.map((con: Contacts) => (
+            <div class="flex flex-col gap-2">
+              <span class="font-light text-sm">{con.contact}</span>
+              <span class="font-secondary font-normal text-2xl text-primary-brown-600">{con.address}</span>
+            </div>
+          ))
+        }
+      </div>
     </div>
-    {
-      footerIcons.map((icon: Icons) => (
-        <div>
-          <Image src={icon.img} alt="Facebook"/>
+    <div class="bg-neutral-grey-300 w-full h-0.5 my-10"></div>
+    <div class="flex flex-col gap-8">
+      <div>
+        <small class="leading-6 font-light text-base">© 2022 Inteo - Award winning studio. Made with love by <span class="text-primary-brown-600">Landify</span></small>
+      </div>
+      <div class="flex flex-col gap-4">
+        <div class="flex items-center gap-4">
+          <h4 class=" font-semibold text-neutral-black-700">CONNECT</h4>
+          <div class="w-20 h-0.5 bg-neutral-black-700"></div>
         </div>
-      ))
-    }
+        <nav class="flex gap-6">
+          {
+            footerIcons.map((icon: Icons) => (
+              <a href={icon.href} class="border-2 rounded-full border-primary-brown-50 p-2">
+                <Image class="w-5 h-5" src={icon.img} alt={icon.label}/>
+              </a>
+            ))
+          }
+        </nav>
+      </div>
+    </div>
   </div>
 </footer>
