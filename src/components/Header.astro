@@ -19,27 +19,27 @@ const navlinks: NavLinks[] = [
 
 <header>
   <div class="flex flex-col items-center gap-20">
-    <div class=" w-11/12 max-w-md  flex justify-between items-center py-7">
+    <div class=" w-11/12 flex justify-between items-center py-7">
       <Logo class="h-full w-24"/>
-      <button id="open-menu" aria-controls="menu-modal" aria-expanded="false">
+      <button class=" md:hidden" id="open-menu" aria-controls="menu-modal" aria-expanded="false">
         <Menu class=" cursor-pointer text-neutral-black-900 hover:scale-125 transition-transform duration-200 "/>
       </button>
-      <nav id="menu-modal" class=" fixed bg-neutral-black-700 inset-0 hidden h-screen">
-        <Close id="close-menu" class=" ms-auto cursor-pointer mt-5 mr-5 hover:scale-125 transition-transform duration-200 "/>
-        <ul class="flex flex-col gap-8 items-center mt-44">
+      <nav id="menu-modal" class=" fixed bg-neutral-black-700 inset-0 hidden h-screen md:flex md:flex-row md:bg-inherit md:static md:h-full ">
+        <Close id="close-menu" class=" ms-auto cursor-pointer mt-5 mr-5 hover:scale-125 transition-transform duration-200 md:hidden"/>
+        <ul class="flex flex-col gap-8 items-center mt-44 md:flex-row md:m-0">
           {
             navlinks.map((link: NavLinks) => (
               <li class="hover:scale-125 transition-transform duration-200 ">
-                <a class="text-2xl text-white" href={link.href}>{link.name}</a>
+                <a class="text-2xl text-white md:text-neutral-black-900 font-medium md:text-sm" href={link.href}>{link.name}</a>
               </li>
             ))
           }
         </ul>
       </nav>
     </div>
-    <div class="w-11/12 max-w-md">
-      <h1 class=" font-secondary font-medium text-5xl text-center leading-[60px]">Make your home an ode to joy</h1>
-      <p class="text-lg text-center text-neutral-black-700 font-light mt-6 leading-8 px-2">
+    <div class="w-[359px] md:w-3xl flex flex-col gap-6">
+      <h1 class=" font-secondary font-medium text-5xl text-center leading-[60px] md:text-7xl md:leading-24">Make your home an ode to joy</h1>
+      <p class="text-lg text-center text-neutral-black-700 font-light leading-8 md:text-xl">
         We turn your empty house to a lovely home, making the compact spaces  with sapce saving furnitures. Making the unique tastes of yours into reality! 
       </p>
     </div>
