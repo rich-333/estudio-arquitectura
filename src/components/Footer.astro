@@ -3,7 +3,6 @@ import { footerContacts } from "../data/footer"
 import type { Contacts } from "../data/footer"
 import { footerIcons } from "../data/footer"
 import type { Icons } from "../data/footer"
-import Image from "astro/components/Image.astro"
 ---
 
 <footer class="flex justify-center xl:mb-20">
@@ -43,7 +42,7 @@ import Image from "astro/components/Image.astro"
           {
             footerIcons.map((icon: Icons) => (
               <a href={icon.href} class="border-2 rounded-full border-primary-brown-50 p-2">
-                <Image class="w-5 h-5" src={icon.img} alt={icon.label}/>
+                <img class="w-5 h-5" src={icon.img} alt={icon.label}/>
               </a>
             ))
           }

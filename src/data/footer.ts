@@ -1,10 +1,10 @@
-import facebook from "../assets/icons/facebook.svg";
-import instagram from "../assets/icons/instagram.svg";
-import youtube from "../assets/icons/youtube.svg";
-import twitter from "../assets/icons/twitter.svg";
+import facebook from "../assets/icons/facebook.svg?url";
+import instagram from "../assets/icons/instagram.svg?url";
+import youtube from "../assets/icons/youtube.svg?url";
+import twitter from "../assets/icons/twitter.svg?url";
 
 export interface Icons {
-  img: ImageMetadata;
+  img: string;
   label: string;
   href: string;
 }

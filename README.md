@@ -1,43 +1,34 @@
-# Astro Starter Kit: Minimal
+# Estudio de arquitectura
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Este es un proyecto de práctica en Astro, donde implementé un diseño de interfaz tomado de una plantilla de Figma sobre un estudio de arquitectura y diseño interior.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+---
 
-## 🚀 Project Structure
+## 🖼️ Capturas de pantalla
 
-Inside of your Astro project, you'll see the following folders and files:
+![Vista Desktop](public/images/screenshoots/desktop.png)
+![Vista tablet](public/images/screenshoots/tablet.png)
+![Vista movil](public/images/screenshoots/movil.png)
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+---
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 📌 Tecnologías usadas
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+- [Astro](https://astro.build/)
+- HTML, CSS, JavaScript
+- Tailwind CSS
+- [Figma](https://www.figma.com/)
 
-Any static assets, like images, can be placed in the `public/` directory.
+---
 
-## 🧞 Commands
+## 🎨 Diseño
 
-All commands are run from the root of the project, from a terminal:
+El diseño original de la interfaz fue creado por [Landify y Aravind Solaiappan] en Figma:  
+[Enlace a la plantilla original de Figma](https://www.figma.com/community/file/1096849048863088197)
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+> Nota: Este proyecto es únicamente con fines de práctica y aprendizaje.
 
-## 👀 Want to learn more?
+### ✨ Adaptaciones realizadas
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- Hice un menu para dispositivos moviles.
+- Modifique la distribucion de la seccion trabajos recientes ya que no pude adaptarla tal cual al diseño.
