@@ -1,44 +1,17 @@
 ---
 import Section from "../components/Section.astro";
-import WorkInterior from "../assets/images/workInterior.svg"
-import workPool from "../assets/images/workPool.svg"
-import workRenovation from "../assets/images/workRenovation.svg"
-import Image from "astro/components/Image.astro";
-
-interface Works {
-  id?: string;
-  title: string;
-  description: string;
-  image: ImageMetadata
-};
+import { recentWorks } from "../data/recentWorks";
+import type { Work } from "../data/recentWorks";
 
 const { id } = Astro.props;
-
-const recentWorks: Works[] = [
-  { 
-    title: "Villa Furnishing & Interior", 
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus fringilla dui amet faucibus nam. Erat id laoreet posuere etiam morbi.",
-    image: WorkInterior
-  },
-  {
-    title: "Luxury Hotel Renovation", 
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus fringilla dui amet faucibus nam.",
-    image: workRenovation
-  },
-  {
-    title: "Residence Swimming Pool", 
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus fringilla dui amet faucibus nam.",
-    image: workPool
-  }
-]
 ---
 
 <Section id={id} sectionTitle="RECENT WORKS" classMB="mb-12" class="md:my-24" sectionSubtitle="Some of our crafts made with love">
   <div class=" flex flex-col gap-10 md:gap-20 md:last:gap-12 xl:grid xl:grid-cols-2 xl:items-end">
     {
-      recentWorks.map((work: Works) => (
+      recentWorks.map((work: Work) => (
         <article class=" flex flex-col gap-4">
-          <Image class="md:w-full" src={work.image} alt={work.title}/>
+          <img class="md:w-full" src={work.image} alt={work.title}/>
           <h4 class=" font-secondary text-2xl leading-8 font-normal md:text-4xl md:leading-12">{work.title}</h4>
           <p class=" text-neutral-black-700 text-sm leading-6 font-light md:text-lg md:leading-8">{ work.description }</p>
         </article>

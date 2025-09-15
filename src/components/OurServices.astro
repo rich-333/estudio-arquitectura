@@ -1,46 +1,21 @@
 ---
 import Section from "../components/Section.astro";
-import Image from "astro/components/Image.astro";
-import Building from "../assets/icons/buildingRenovation.svg"
-import Interior from "../assets/icons/interiorDesign.svg"
-import Management from "../assets/icons/management.svg"
-
-interface Services {
-  id?: string;
-  title: string;
-  icon: ImageMetadata;
-};
+import { sectionServices } from "../data/ourServices";
+import type { Services } from "../data/ourServices";
 
 const { id } = Astro.props;
 const description = "Non diam pretium tristique augue placerat dolor. Accumsan nibh nunc, molestie volutpat ipsum, ultricies."
-
-const sectionServices: Services[] = [
-  { 
-    title: "Architectural & Interior design",  
-    icon: Interior
-  },
-
-  {
-    title: "Building Renovation",  
-    icon: Building
-  },
-
-  {
-    title: "Construciton Management",
-    icon: Management
-  }
-]
 ---
 
-<Section id={id} sectionTitle="OUR SERVICES" class="my-12" sectionSubtitle="We provide the best solutions for your dream home" classMB="mb-10">
+<Section id={id} sectionTitle="OUR SERVICES" class="my-12 mt-28" sectionSubtitle="We provide the best solutions for your dream home" classMB="mb-10">
   <div class="xl:flex xl:gap-8">
     {
       sectionServices.map((service: Services) => (
-        <section class="border-2 border-neutral-grey-300 mb-8 p-6 first:mt-10 xl:mb-0 xl:first:mt-0">
-          <Image class=" w-12 h-12" src={service.icon} alt={service.title} />
+        <article class="border-2 border-neutral-grey-300 mb-8 p-6 first:mt-10 xl:mb-0 xl:first:mt-0">
+          <img class=" w-12 h-12" src={service.icon} loading="lazy"/>
           <h4 class=" text-3xl leading-10 font-secondary my-4 font-normal md:text-4xl md:mt-12">{service.title}</h4>
           <p class="text-lg leading-8 font-light">{description}</p>
-        </section>
+        </article>
       ))
     }
   </div>

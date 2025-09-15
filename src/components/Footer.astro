@@ -1,54 +1,9 @@
 ---
-import facebook from "../assets/icons/facebook.svg"
-import instagram from "../assets/icons/instagram.svg"
-import youtube from "../assets/icons/youtube.svg"
-import twitter from "../assets/icons/twitter.svg"
+import { footerContacts } from "../data/footer"
+import type { Contacts } from "../data/footer"
+import { footerIcons } from "../data/footer"
+import type { Icons } from "../data/footer"
 import Image from "astro/components/Image.astro"
-
-interface Icons {
-  img: ImageMetadata;
-  label: string;
-  href: string;
-}
-
-interface Contacts {
-  contact: string;
-  address: string
-}
-
-const footerIcons: Icons[] = [
-  {
-    img: instagram,
-    label: "Instagram",
-    href: "#"
-  },
-  {
-    img: facebook,
-    label: "Facebook",
-    href: "#"
-  },
-  {
-    img: youtube,
-    label: "Youtube",
-    href: "#"
-  },
-  {
-    img: twitter,
-    label: "twitter",
-    href: "#"
-  }
-]
-
-const footerContacts: Contacts[] = [
-  {
-    contact: "Email us at",
-    address: "hello@landify.design"
-  },
-  {
-    contact: "If you're hurry, quick call for us",
-    address: "+8(663)125-08-59"
-  }
-]
 ---
 
 <footer class="flex justify-center xl:mb-20">

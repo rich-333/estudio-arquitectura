@@ -1,22 +1,7 @@
 ---
 import Image from "astro/components/Image.astro";
-import GermanAward from "../assets/images/germanAward.svg"
-import GoldenAward from "../assets/images/goldenAward.svg"
-import GoodAward from "../assets/images/goodAward.svg"
-import IfAward from "../assets/images/ifAward.svg"
-
-interface SectionAward {
-  title: string;
-  year: string;
-  img: ImageMetadata;
-};
-
-const awards: SectionAward[] = [
-  { title: "German Design Award", year: "2021", img: GermanAward },
-  { title: "Gold A’ Design Award", year: "2021", img: GoldenAward},
-  { title: "IF Design Award", year: "2020", img: IfAward},
-  { title: "Good Design Award", year: "2019", img: GoodAward},
-];
+import { awards } from "../data/awards";
+import type { SectionAward } from "../data/awards";
 ---
 
 <div class="max-w-8xl bg-neutral-black-900 text-neutral-grey-300 grid justify-center content-center">
@@ -28,7 +13,7 @@ const awards: SectionAward[] = [
       {
         awards.map((award: SectionAward) => (
           <section class="flex items-center mb-6 last:mb-0 gap-4  md:last:mb-6 xl:mb-0 xl:last:mb-0">
-            <Image src={award.img} alt={award.title} />
+            <img src={award.img} alt={award.title} />
             <div class="text-sm font-normal flex flex-col gap-1.5">
               <h3 class="">{award.title}</h3>
               <span>{award.year}</span>
