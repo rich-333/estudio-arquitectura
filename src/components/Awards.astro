@@ -19,15 +19,15 @@ const awards: SectionAward[] = [
 ];
 ---
 
-<div class="max-w-7xl bg-neutral-black-900 text-neutral-grey-300 grid justify-center content-center">
-  <div class="w-[340px] grid grid-cols-[80px_1fr] h-auto py-6 md:pb-0 md:w-3xl md:grid-cols-[140px_1fr_1fr] gap-x-3 ">
+<div class="max-w-8xl bg-neutral-black-900 text-neutral-grey-300 grid justify-center content-center">
+  <div class="w-[340px] grid grid-cols-[80px_1fr] h-auto py-6 md:pb-0 md:w-3xl md:grid-cols-[140px_1fr_1fr] gap-x-3 xl:w-7xl xl:grid-cols-[140px_1fr_1fr_1fr_1fr] xl:py-6">
     <div class="flex items-start row-span-4 md:items-center md:row-span-2">
-      <h2 class=" font-secondary text-2xl italic -rotate-90 mt-6 -ml-7 tracking-wide md:mt-0 md:ml-1">Awards</h2>
+      <h2 class=" font-secondary text-2xl italic -rotate-90 mt-6 -ml-7 tracking-wide md:mt-0 md:ml-1 xl:-ml-7">Awards</h2>
       <div class="w-[1px] bg-white h-7 rotate-90 mt-7 md:h-12 md:mt-0 md:ml-4"></div>
     </div>
       {
         awards.map((award: SectionAward) => (
-          <section class="flex items-center mb-6 last:mb-0 gap-4  md:last:mb-6">
+          <section class="flex items-center mb-6 last:mb-0 gap-4  md:last:mb-6 xl:mb-0 xl:last:mb-0">
             <Image src={award.img} alt={award.title} />
             <div class="text-sm font-normal flex flex-col gap-1.5">
               <h3 class="">{award.title}</h3>

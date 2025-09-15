@@ -12,19 +12,21 @@ interface Props {
 const { id } = Astro.props;
 ---
 
-<Section id={id} sectionTitle="ABOUT US" class=" my-12 md:my-24" sectionSubtitle="We help to bring your dream home to reality" classMB="mb-6">
-  <p class=" leading-6 font-light md:text-lg md:leading-8">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus fringilla dui amet faucibus nam. Erat id laoreet posuere etiam morbi.
-  </p>
-  <p class="mt-6 mb-20 leading-6 font-light md:text-lg md:leading-8">
-    Tempor dolor elementum tellus non ipsum faucibus. Justo, magna mauris posuere auctor justo. Habitant proin aliquet volutpat leo ultricies. Dui blandit eget vitae turpis ultrices aliquet nunc. Faucibus sit odio bibendum lobortis diam.
-  </p>
-  <div class="flex relative gap-2 justify-center md:gap-3">
+<Section id={id} sectionTitle="ABOUT US" class=" my-12 md:my-24 xl:flex xl:gap-8 xl:items-center" sectionSubtitle="We help to bring your dream home to reality" classMB="mb-6">
+  <div slot="paragraph">
+    <p class=" leading-6 font-light md:text-lg md:leading-8">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus fringilla dui amet faucibus nam. Erat id laoreet posuere etiam morbi.
+    </p>
+    <p class="mt-6 mb-20 leading-6 font-light md:text-lg md:leading-8">
+      Tempor dolor elementum tellus non ipsum faucibus. Justo, magna mauris posuere auctor justo. Habitant proin aliquet volutpat leo ultricies. Dui blandit eget vitae turpis ultrices aliquet nunc. Faucibus sit odio bibendum lobortis diam.
+    </p>
+  </div>
+  <div class="flex relative gap-2 justify-center md:gap-3 lg:flex-1">
     <picture>
       <source srcset={aboutImage1Tablet} media="(min-width: 768px)" />
       <img src={aboutImage1} alt="About Image">
     </picture>
-    <AboutAward class="absolute right-20 bottom-62 md:bottom-144 md:right-67"/>
+    <AboutAward class="absolute right-20 bottom-62 md:bottom-144 md:right-67 xl:bottom-135 xl:right-60"/>
     <picture>
       <source srcset={aboutImage2Tablet} media="(min-width: 768px)">
       <img src={aboutImage2} class=" mt-10 md:mt-20"/>

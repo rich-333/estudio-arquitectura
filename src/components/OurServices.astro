@@ -33,13 +33,15 @@ const sectionServices: Services[] = [
 ---
 
 <Section id={id} sectionTitle="OUR SERVICES" class="my-12" sectionSubtitle="We provide the best solutions for your dream home" classMB="mb-10">
-  {
-    sectionServices.map((service: Services) => (
-      <section class="border-2 border-neutral-grey-300 mb-8 p-6 first:mt-10">
-        <Image class=" w-12 h-12" src={service.icon} alt={service.title} />
-        <h4 class=" text-3xl leading-10 font-secondary my-4 font-normal md:text-4xl md:mt-12">{service.title}</h4>
-        <p class="text-lg leading-8 font-light">{description}</p>
-      </section>
-    ))
-  }
+  <div class="xl:flex xl:gap-8">
+    {
+      sectionServices.map((service: Services) => (
+        <section class="border-2 border-neutral-grey-300 mb-8 p-6 first:mt-10 xl:mb-0 xl:first:mt-0">
+          <Image class=" w-12 h-12" src={service.icon} alt={service.title} />
+          <h4 class=" text-3xl leading-10 font-secondary my-4 font-normal md:text-4xl md:mt-12">{service.title}</h4>
+          <p class="text-lg leading-8 font-light">{description}</p>
+        </section>
+      ))
+    }
+  </div>
 </Section>
