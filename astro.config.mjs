@@ -6,5 +6,11 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
+    assetsInclude: ['**/*.svg'],
+    resolve: {
+      alias: {
+        '@': new URL('./src', import.meta.url).pathname,
+      }
+    }
   },
 });
